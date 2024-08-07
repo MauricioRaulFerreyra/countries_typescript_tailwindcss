@@ -12,7 +12,7 @@ const CountryDetails: React.FC<CountryDetailsProps> = ({ country }) => {
 
   return (
     <div className="grid md:grid-cols-2 gap-1">
-      <img src={country.flags.svg} alt={`Flag of ${country.name.common}`} className="w-full h-[280px]" />
+      <img src={country.flags.svg} alt={`Flag of ${country.name.common}`} className="w-[600px] h-[280px]" />
       <div>
         <h1 className="text-3xl font-bold mb-4">{country.name.common}</h1>
         <p>
