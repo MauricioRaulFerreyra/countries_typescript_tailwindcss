@@ -1,53 +1,64 @@
-# Requerimiento del Proyecto
+# Proyecto React con TypeScript y Tailwind CSS
 
-Desarrollar una aplicación web utilizando **React.js** con **TypeScript** y **Tailwind CSS** que permita a los usuarios buscar y filtrar información de países de manera eficiente. La aplicación debe implementar las siguientes funcionalidades y características:
+Este proyecto está organizado siguiendo una estructura de carpetas clara y bien organizada para facilitar la gestión y el mantenimiento del código. A continuación se describe cada parte de la estructura y su propósito.
 
-## Funcionalidades del Usuario
+## Estructura de Carpetas
 
-1. **Visualización de Países:**
+La estructura de carpetas está diseñada para mantener el proyecto modular y fácil de entender. Cada componente y funcionalidad tiene su propio directorio.
 
-   - Mostrar una lista paginada de todos los países obtenidos desde una API externa en la página de inicio.
+### Componentes
 
-2. **Búsqueda de Países:**
+Los componentes se agrupan en subdirectorios para mantener el código modular. Por ejemplo:
 
-   - Proporcionar un campo de entrada para buscar países por nombre de manera dinámica.
+- **CountryList**: Contiene el componente `CountryList` junto con su subcomponente `CountryCard`.
+- **SearchBar**: Componente para la barra de búsqueda.
+- **RegionFilter**: Componente para el filtrado por región.
+- **ThemeToggle**: Componente para cambiar el tema.
 
-3. **Filtrado por Región:**
+### Páginas
 
-   - Implementar un menú desplegable para filtrar los países por región (África, América, Asia, Europa y Oceanía).
+Las páginas se encuentran en un directorio independiente llamado `pages`. Esto permite manejar rutas y vistas específicas de manera más organizada:
 
-4. **Detalles del País:**
+- **Home.tsx**: Página principal.
+- **CountryPage.tsx**: Página de detalles de un país específico.
 
-   - Permitir que los usuarios hagan clic en un país para ver información más detallada en una página separada.
-   - Incluir la opción de hacer clic en los países limítrofes para ver sus detalles.
+### Hooks
 
-5. **Modo de Color:**
-   - Habilitar la opción de alternar entre modos de color claro y oscuro para mejorar la experiencia del usuario.
+Los hooks personalizados están almacenados en el directorio `hooks`. Esto ayuda a reutilizar la lógica de estado y efectos en diferentes componentes:
 
-## Requisitos Técnicos y de Arquitectura
+- **useCountries.ts**: Hook para obtener y manejar datos de países.
+- **useTheme.ts**: Hook para manejar el tema de la aplicación.
 
-1. **Arquitectura del Software:**
+### Servicios
 
-   - Utilizar principios de **arquitectura limpia** o **arquitectura hexagonal** para estructurar el proyecto, asegurando un desacoplamiento adecuado entre la lógica de negocio y las capas de infraestructura.
+El directorio `services` se utiliza para la comunicación con APIs y centraliza todas las interacciones con servicios externos. Esto mantiene la lógica de negocio separada:
 
-2. **Patrones de Diseño:**
+- **api/CountryAPI.ts**: Interacciones con la API de países.
+- **HttpClient.ts**: Cliente HTTP genérico para hacer peticiones.
 
-   - Implementar patrones de diseño como **Repository**, **Factory**, y **Dependency Injection** para fomentar la modularidad y escalabilidad del código.
+### Tipos
 
-3. **Principios SOLID:**
+Definir tipos en un directorio dedicado llamado `types` asegura que las interfaces y tipos se gestionen de manera consistente en toda la aplicación:
 
-   - Aplicar principios SOLID para garantizar que el código sea fácil de mantener, entender y extender.
+- **country.ts**: Definiciones de tipos para datos de países.
 
-4. **Pruebas Unitarias:**
+### Utilidades
 
-   - Escribir pruebas unitarias para componentes y lógica de negocio utilizando frameworks como Jest y React Testing Library.
+Las funciones auxiliares están en el directorio `utils`, encapsulando lógica común que puede ser utilizada en diferentes partes del proyecto:
 
-5. **Buenas Prácticas:**
-   - Mantener un código limpio y bien documentado, utilizando herramientas como ESLint y Prettier para asegurar la consistencia y calidad del código.
-   - Seguir una convención de commits semánticos para facilitar el seguimiento del historial de cambios.
+- **helpers.ts**: Funciones de ayuda general.
+- **errorHandling.ts**: Manejo de errores y definiciones de clases de error.
 
-## Consideraciones Adicionales
+### Contexto
 
-- **API:** Utilizar una API pública confiable (como REST Countries) para obtener la información de los países.
-- **Rendimiento:** Asegurar que la aplicación sea performante, considerando prácticas de optimización como la carga diferida (lazy loading) de componentes y datos.
-- **Accesibilidad:** Tener en cuenta la accesibilidad al desarrollar la interfaz de usuario, asegurando que sea utilizable para personas con diversas capacidades.
+El directorio `context` se utiliza para manejar estados globales o configuraciones, como el tema de la aplicación. Esto facilita el manejo de contextos en React:
+
+- **ThemeContext.tsx**: Contexto para el manejo del tema de la aplicación.
+
+### Estilos
+
+Los estilos globales se encuentran en el archivo `globals.css` dentro del directorio `styles`. Esto permite mantener estilos comunes y configuraciones de Tailwind en un solo lugar.
+
+## Conclusión
+
+Esta estructura de carpetas permite un desarrollo organizado y eficiente, asegurando que cada parte del proyecto esté claramente separada y sea fácil de mantener. Seguir esta organización ayuda a escalar el proyecto y facilita la colaboración entre desarrolladores.
