@@ -46,7 +46,6 @@ Definir tipos en un directorio dedicado llamado `types` asegura que las interfac
 
 Las funciones auxiliares están en el directorio `utils`, encapsulando lógica común que puede ser utilizada en diferentes partes del proyecto:
 
-- **helpers.ts**: Funciones de ayuda general.
 - **errorHandling.ts**: Manejo de errores y definiciones de clases de error.
 
 ### Contexto
